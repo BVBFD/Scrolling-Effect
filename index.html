@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Scrolling Effect</title>
+    <title>index2</title>
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
@@ -15,22 +15,29 @@
       <img id="road" src="road.png" />
       <h2 id="text">Moon Light</h2>
     </section>
-    <script>
-      let bg = document.getElementById("bg");
-      let moon = document.getElementById("moon");
-      let mountain = document.getElementById("mountain");
-      let road = document.getElementById("road");
-      let text = document.getElementById("text");
-
-      window.addEventListener("scroll", (event) => {
-        let value = window.scrollY;
-
-        bg.style.top = value * 0.5 + "px";
-        moon.style.left = -value * 0.5 + "px";
-        mountain.style.top = -value * 0.15 + "px";
-        road.style.top = value * 0.15 + "px";
-        text.style.top = value * 1 + "px";
-      });
-    </script>
   </body>
+  <script>
+    let bg = document.getElementById('bg');
+    let moon = document.getElementById('moon');
+    let mountain = document.getElementById('mountain');
+    let road = document.getElementById('road');
+    let text = document.getElementById('text');
+
+    document.addEventListener('scroll', (e) => {
+      let scrollValue = window.scrollY;
+      console.log(scrollValue);
+
+      moon.style.left = -scrollValue * 1.5 + 'px';
+      text.style.bottom = -scrollValue * 0.5 + 'px';
+    });
+
+    document.addEventListener('click', (e) => {
+      let clientX = e.clientX;
+      let clientY = e.clientY;
+      let pageX = e.pageX;
+      let pageY = e.pageY;
+      console.log(`clientX:${clientX}, clientY:${clientY}`);
+      console.log(`pageX:${pageX}, pageY:${pageY}`);
+    });
+  </script>
 </html>

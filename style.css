@@ -19,25 +19,26 @@ section {
 }
 
 section::before {
-  content: "";
+  content: '';
   position: absolute;
-  bottom: 0;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 100px;
-  background: linear-gradient(to top, #0a2a43, transparent);
+  height: 100%;
+  /* background: linear-gradient(to top, #0a2a43, transparent); */
   z-index: 10000;
 }
 
 section::after {
-  content: "";
+  content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: #0a2a43;
-  z-index: 10000;
   mix-blend-mode: color;
+  /* z-index: 10000; */
 }
 
 section img {
@@ -50,13 +51,13 @@ section img {
   pointer-events: none;
 }
 
+#road {
+  z-index: 2;
+}
+
 #text {
   position: relative;
   color: #fff;
   font-size: 10em;
   z-index: 1;
-}
-
-#road {
-  z-index: 2;
 }
